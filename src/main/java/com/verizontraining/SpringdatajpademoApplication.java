@@ -3,6 +3,7 @@ package com.verizontraining;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -19,5 +20,10 @@ public class SpringdatajpademoApplication {
     @Bean
     public Docket api() {
     	return new Docket(DocumentationType.SWAGGER_2);
+    }
+    
+    @Bean
+    public RestTemplate getRestTemplate() {
+    	return new RestTemplate();
     }
 }
